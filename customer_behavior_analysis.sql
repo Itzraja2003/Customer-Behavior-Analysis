@@ -22,6 +22,8 @@ Round(AVG(purchase_amount),2)
 from customer
 where shipping_type in ('Standard', 'Express')
 group by shipping_type
+
+       
 --Q5. Do subscribed customers spend more? Compare average spend and total revenue 
 --between subscribers and non-subscribers.
 
@@ -62,7 +64,6 @@ group by customer_segment;
 
 
 --Q8. What are the top 3 most purchased products within each category? 
-
 with item_counts as(
 select category,
 item_purchased,
@@ -70,7 +71,6 @@ Count(customer_id) as total_orders,
 Row_number() over(partition by category order by count (customer_id) Desc) as item_rank
 from customer
 group by category, item_purchased)
-
 select item_rank, category, item_purchased, total_orders from item_counts
 where item_rank <= 3;
 
@@ -81,6 +81,8 @@ Count(customer_id) AS repeat_buyers
 from customer 
 where previous_purchases > 5
 Group BY subscription_status;
+
+
 --Q10. What is the revenue contribution of each age group? 
 Select age_group, 
 sum(purchase_amount) AS total_revenue
