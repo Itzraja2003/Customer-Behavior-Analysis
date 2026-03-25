@@ -1,0 +1,14 @@
+Problem Statement
+
+Retail businesses often struggle to understand customer purchasing behavior, spending patterns, and the impact of discounts or subscriptions on revenue. Raw transactional data is noisy, inconsistent, and not directly usable for decision-making.
+
+This project aims to:
+
+Clean and transform raw customer shopping data
+Build structured datasets for analysis
+Identify key business insights such as:
+Customer segmentation (New, Returning, Loyal)
+Revenue contribution by demographics
+Impact of discounts and subscriptions
+Product performance and demand trends
+Enable data-driven decision-making using SQL analytics and dashboards
